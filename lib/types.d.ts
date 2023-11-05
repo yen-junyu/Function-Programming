@@ -128,3 +128,10 @@ export interface AllPosts {
     nodes: Post[]
   }
 }
+
+export interface User {
+  id: string;
+  name: string;
+  age: number;
+  address: string;
+}

@@ -19,11 +19,15 @@
     "format": "npx prettier '**/*.{js,jsx,ts,tsx,md,html,css,json,yml}' --config=.prettierrc.js --write || true",
     "lint": "npm run format && npm run lint:js",
     "lint:js": "next lint",
+    "test": "jest --watch --detectOpenHandles",
     "start": "next start"
   },
   "dependencies": {
+    "@testing-library/jest-dom": "^6.1.4",
     "eslint": "^8.52.0",
     "eslint-config-next": "^13.5.6",
+    "jest-environment-jsdom": "^29.7.0",
+    "mariadb": "^3.2.2",
     "next": "^13.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -31,14 +35,20 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.8.7",
-    "@types/react": "^18.2.31",
+    "@testcontainers/mysql": "^10.2.2",
+    "@types/jest": "^29.5.7",
+    "@types/node": "20.8.10",
+    "@types/react": "18.2.34",
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.16",
+    "jest": "^29.7.0",
+    "next-test-api-route-handler": "^3.1.9",
+    "node-mocks-http": "^1.13.0",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.6",
     "tailwindcss": "^3.3.3",
-    "typescript": "^5.2.2"
+    "testcontainers": "^10.2.2",
+    "typescript": "5.2.2"
   }
 }

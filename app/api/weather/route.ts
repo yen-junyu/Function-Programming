@@ -11,6 +11,7 @@ export const runtime = 'edge'
  */
 export async function GET(request: Request) {
   // Get query params from request.
+  console.log(request.url)
   const {searchParams} = new URL(request.url)
 
   // Parse params.
