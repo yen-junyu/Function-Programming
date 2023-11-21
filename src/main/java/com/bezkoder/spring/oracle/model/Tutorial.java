@@ -1,11 +1,15 @@
 package com.bezkoder.spring.oracle.model;
 
+import java.util.Date;
+
 import javax.persistence.*;
 
-@Entity
-@Table(name = "tutorials")
-public class Tutorial {
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.format.annotation.DateTimeFormat;
 
+@Entity
+@Table(name = "TUTORIAL_TABLE", schema = "SYSTEM")
+public class Tutorial {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -18,6 +22,11 @@ public class Tutorial {
 
 	@Column(name = "published")
 	private boolean published;
+
+	@CreatedDate
+	@Column(name = "createdDate")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date createdDate = new Date();
 
 	public Tutorial() {
 
